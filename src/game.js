@@ -5,11 +5,13 @@ export default class Game {
     this.board = [[null, null, null], [null, null, null], [null, null, null]]
     this.player = Math.random() < 0.5 ? this.p1 : this.p2
     this.sym = 'X'
+    this.move_count = 0;
   }
 
   turn (row, col) {
     col = col || row
     this.board[row][col] = this.sym
+    this.move_count = this.move_count + 1
   }
 
   nextPlayer () {
@@ -21,6 +23,10 @@ export default class Game {
     return this.rowWin() || this.colWin() || this.diagWin()
   }
 
+  isTie () {
+    return (this.move_count > 9)
+  }
+  
   rowWin () {
     let win = false
     for (let r = 0; r < 3; r++) {
