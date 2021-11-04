@@ -36,7 +36,7 @@ window.onload = () => {
 
         const [row, col] = evt.target.classList
         game.turn(row, col)
-
+        alert("I am an alert box! And the value of count is: " + game.move_count );
         if (game.hasWinner()) {
           document.getElementById('winner').innerText = game.player
           document.getElementById('win').style.display = 'inline'
