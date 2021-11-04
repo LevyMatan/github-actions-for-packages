@@ -24,7 +24,7 @@ export default class Game {
   }
 
   isTie () {
-    return (this.move_count > 9)
+    return (this.move_count == 9)
   }
   
   rowWin () {
