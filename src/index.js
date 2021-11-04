@@ -58,8 +58,8 @@ window.onload = () => {
           document.getElementById('win').style.display = 'none'
           document.getElementById('turn').style.display = 'none'
           document.getElementById('tie').style.display = 'inline'
-          document.getElementById('newGame').style.display = 'inline'
-          document.getElementById('newGame').onclick = () => playGame(p1, p2)  
+          document.getElementById('newGameWhenTie').style.display = 'inline'
+          document.getElementById('newGameWhenTie').onclick = () => playGame(p1, p2)  
           
           document.querySelectorAll('td').forEach(el => {
             el.onclick = undefined
