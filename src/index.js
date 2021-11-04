@@ -19,6 +19,7 @@ window.onload = () => {
 
   (function playGame (p1, p2) {
     document.getElementById('win').style.display = 'none'
+    document.getElementById('tie').style.display = 'none'
     document.getElementById('turn').style.display = 'inline'
     document.getElementById('p1Score').innerText = score1
     document.getElementById('p2Score').innerText = score2
@@ -36,11 +37,13 @@ window.onload = () => {
 
         const [row, col] = evt.target.classList
         game.turn(row, col)
-
+//         alert("I am an alert box! And the value of count is: " + game.move_count );
         if (game.hasWinner()) {
+          game.move_count = 0
           document.getElementById('winner').innerText = game.player
           document.getElementById('win').style.display = 'inline'
           document.getElementById('turn').style.display = 'none'
+          document.getElementById('tie').style.display = 'none'
 
           if (game.player === p1) { document.getElementById('p1Score').innerText = ++score1 } else { document.getElementById('p2Score').innerText = ++score2 }
 
@@ -51,8 +54,16 @@ window.onload = () => {
             el.onclick = undefined
           })
         } else if (game.isTie()){
-          document.getElementById('newGame').style.display = 'inline'
-          document.getElementById('newGame').onclick = () => playGame(p1, p2)        
+          game.move_count = 0
+          document.getElementById('win').style.display = 'none'
+          document.getElementById('turn').style.display = 'none'
+          document.getElementById('tie').style.display = 'inline'
+          document.getElementById('newGameWhenTie').style.display = 'inline'
+          document.getElementById('newGameWhenTie').onclick = () => playGame(p1, p2)  
+          
+          document.querySelectorAll('td').forEach(el => {
+            el.onclick = undefined
+          })
         } else {
           game.nextPlayer()
           player.innerText = game.player
