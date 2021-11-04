@@ -50,7 +50,7 @@ window.onload = () => {
           document.querySelectorAll('td').forEach(el => {
             el.onclick = undefined
           })
-        if (game.isTie()){
+        } else if (game.isTie()){
           document.getElementById('newGame').style.display = 'inline'
           document.getElementById('newGame').onclick = () => playGame(p1, p2)        
         } else {
