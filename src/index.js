@@ -59,7 +59,11 @@ window.onload = () => {
           document.getElementById('turn').style.display = 'none'
           document.getElementById('tie').style.display = 'inline'
           document.getElementById('newGame').style.display = 'inline'
-          document.getElementById('newGame').onclick = () => playGame(p1, p2)        
+          document.getElementById('newGame').onclick = () => playGame(p1, p2)  
+          
+          document.querySelectorAll('td').forEach(el => {
+            el.onclick = undefined
+          })
         } else {
           game.nextPlayer()
           player.innerText = game.player
