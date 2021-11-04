@@ -19,6 +19,7 @@ window.onload = () => {
 
   (function playGame (p1, p2) {
     document.getElementById('win').style.display = 'none'
+    document.getElementById('tie').style.display = 'none'
     document.getElementById('turn').style.display = 'inline'
     document.getElementById('p1Score').innerText = score1
     document.getElementById('p2Score').innerText = score2
@@ -42,6 +43,7 @@ window.onload = () => {
           document.getElementById('winner').innerText = game.player
           document.getElementById('win').style.display = 'inline'
           document.getElementById('turn').style.display = 'none'
+          document.getElementById('tie').style.display = 'none'
 
           if (game.player === p1) { document.getElementById('p1Score').innerText = ++score1 } else { document.getElementById('p2Score').innerText = ++score2 }
 
@@ -52,6 +54,7 @@ window.onload = () => {
             el.onclick = undefined
           })
         } else if (game.isTie()){
+          game.move_count = 0
           document.getElementById('win').style.display = 'none'
           document.getElementById('turn').style.display = 'none'
           document.getElementById('tie').style.display = 'inline'
