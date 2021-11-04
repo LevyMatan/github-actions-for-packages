@@ -4,6 +4,7 @@
 
 https://levymatan.github.io/github-actions-for-packages/
 
+I wander why the network suspect my site to be un-friendly
 ### Checking if I can make nice code snippest
 
 ```c
