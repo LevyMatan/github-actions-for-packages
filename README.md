@@ -1,9 +1,8 @@
 # Tic Tac Toe Game
 
-Let's learn about CD while using GitHub Actions and the GitHub Package Registry!
+### Here is a link tot he actual game, enjoy :)
 
-
-Head over to your first [Pull Request](../../pull/1) to get started
+https://levymatan.github.io/github-actions-for-packages/
 
 ### Checking if I can make nice code snippest
 
