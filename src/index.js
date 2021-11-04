@@ -38,6 +38,7 @@ window.onload = () => {
         game.turn(row, col)
         alert("I am an alert box! And the value of count is: " + game.move_count );
         if (game.hasWinner()) {
+          game.move_count = 0
           document.getElementById('winner').innerText = game.player
           document.getElementById('win').style.display = 'inline'
           document.getElementById('turn').style.display = 'none'
@@ -51,6 +52,9 @@ window.onload = () => {
             el.onclick = undefined
           })
         } else if (game.isTie()){
+          document.getElementById('win').style.display = 'none'
+          document.getElementById('turn').style.display = 'none'
+          document.getElementById('tie').style.display = 'inline'
           document.getElementById('newGame').style.display = 'inline'
           document.getElementById('newGame').onclick = () => playGame(p1, p2)        
         } else {
